@@ -14,7 +14,8 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
-  console.log(Flight);
+  const flight = new Flight(req.body);
+  console.log(flight);
 }
 
 export {
