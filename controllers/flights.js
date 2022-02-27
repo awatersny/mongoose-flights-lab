@@ -1,7 +1,7 @@
 import { Flight } from "../models/flight.js";
 
 function newFlight(req, res) {
-  console.log(1);
+  res.render("flights/new");
 }
 
 export {
