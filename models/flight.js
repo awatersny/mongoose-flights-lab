@@ -12,7 +12,7 @@ const flightSchema = new Schema({
     enum: ["AUS", "DFW", "DEN", "LAX", "SAN"],
     default: "DEN"
   },
-  flightno: {
+  flightNo: {
     type: Number,
     min: 10,
     max: 9999
