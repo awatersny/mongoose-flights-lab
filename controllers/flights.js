@@ -8,7 +8,12 @@ function newFlight(req, res) {
   res.render("flights/new");
 }
 
+function create(req, res) {
+  console.log(1);
+}
+
 export {
   index,
-  newFlight as new
+  newFlight as new,
+  create
 }
