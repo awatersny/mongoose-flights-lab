@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+th {
+  text-align: left;
+  border-bottom: solid black 2px;
+}
+
+th, td {
+  min-width: 150px;
+}
