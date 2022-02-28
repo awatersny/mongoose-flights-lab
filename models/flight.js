@@ -31,6 +31,9 @@ const flightSchema = new Schema({
   departs: {
     type: Date,
     default: Date.now() + 365*24*60*60000
+  },
+  tickets: {
+    type: [ticketSchema]
   }
 });
 
