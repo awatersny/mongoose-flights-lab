@@ -18,7 +18,8 @@ const flightSchema = new Schema({
     max: 9999
   },
   departs: {
-    type: Date
+    type: Date,
+    default: Date.now() + 365*24*60*60000
   }
 });
 
