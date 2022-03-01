@@ -18,13 +18,13 @@
     <div><%= flight.flightNo %> </div>
     <div>Time of Depature:</div>
     <div><%= flight.departs %> </div>
-    <div>Seat:</div>
+    <div>Seats:</div>
     <div>
       <% flight.tickets.forEach(ticket=>{ %>
         <%= ticket.seat %> 
       <% });  %> 
     </div>
-    <div>Price:</div>
+    <div>Prices:</div>
     <div>
       <% flight.tickets.forEach(ticket=>{ %>
         <%= ticket.price %>

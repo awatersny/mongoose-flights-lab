@@ -6,6 +6,9 @@ function index(req, res) {
       error: error,
       flights: flights
     });
+  }).sort({
+    departs: 'asc', 
+    test: -1
   });
 }
 
