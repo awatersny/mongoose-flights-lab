@@ -7,7 +7,7 @@
   <title>List of Flights</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-<body>
+<%- include("../partials/nav") %> 
   <h1>Flights List</h1>
   <table>
     <thead>
@@ -30,7 +30,6 @@
       <% }); %> 
     </tbody>
   </table><br>
-  <a href="/flights/new">New Flight</a><br>
   <a href="/">Home</a>
 </body>
 </html>

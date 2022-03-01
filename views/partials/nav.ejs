@@ -2,16 +2,22 @@
 <body>
   <nav>
     <i class="fas fa-film fa-2x"></i>
-    <a 
+    <!-- <a 
       href="/meals/new" 
-      <%- title === 'Add Performer' ? 'class="active"' : "" %>
+      <%# title === 'Add Meal' ? 'class="active"' : "" %>
     >
-      ADD PERFORMER
+      ADD MEAL
+    </a> -->
+    <a 
+      href="/flights/new" 
+      <%- title === 'Add Flight' ? 'class="active"' : "" %>
+    >
+      ADD FLIGHT
     </a>
     <a 
-      href="/flights/new" <%- title === 'Add Movie' ? 'class="active"' : "" %>
-    >ADD FLIGHT</a>
-    <a 
-      href="/flights" <%- title === 'All Movies' ? 'class="active"' : "" %>
-    >ALL FLIGHTS</a>
+      href="/flights" 
+      <%- title === 'All Flights' ? 'class="active"' : "" %>
+    >
+      ALL FLIGHTS
+    </a>
   </nav>

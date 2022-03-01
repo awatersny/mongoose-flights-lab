@@ -4,7 +4,8 @@ function index(req, res) {
   Flight.find({}, (error, flights)=>{
     res.render("flights/index", {
       error: error,
-      flights: flights
+      flights: flights,
+      title: "All Flights"
     });
   }).sort({
     departs: 'asc', 
@@ -18,7 +19,10 @@ function newFlight(req, res) {
   const dt = newFlight.departs;
   // Format the date for the value attribute of the input
   const departsDate = dt.toISOString().slice(0, 16);
-  res.render('flights/new', {departsDate});
+  res.render('flights/new', {
+    departsDate,
+    title: "Add Flight"
+  });
 }
 
 function create(req, res) {
