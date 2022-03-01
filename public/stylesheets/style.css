@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 0 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -14,4 +14,13 @@ th {
 
 th, td {
   min-width: 150px;
+}
+
+nav {
+  margin: 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ddd;
 }
