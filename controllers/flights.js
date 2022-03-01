@@ -26,16 +26,27 @@ function create(req, res) {
   const flight = new Flight(req.body);
   console.log(flight);
 
-  flight.save(err => {
-    if(err){
+  flight.save(error => {
+    if(error){
       return res.redirect('/flights/new');
     }
     res.redirect('/flights');
   });
 }
 
+function show(req, res) {
+  Flight.findById(req.params.id, (error, flight)=>{
+    res.render("flights/show", {
+      error: error,
+      flight: flight,
+      title: "Flight Details"
+    });
+  });
+}
+
 export {
   index,
   newFlight as new,
-  create
+  create,
+  show
 }

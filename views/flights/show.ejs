@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title%> </title>
+  <link rel="stylesheet" href="/stylesheets/flights/show.css">
+</head>
+<body>
+  <h1><%= title%></h1>
+  <section>
+    <% console.log(flight) %> 
+    <div>Airline:</div>
+    <div><%= flight.airline %> </div>
+    <div>Airport:</div>
+    <div><%= flight.airport %> </div>
+    <div>Flight #:</div>
+    <div><%= flight.flightNo %> </div>
+    <div>Time of Depature:</div>
+    <div><%= flight.departs %> </div>
+    <div>Seat:</div>
+    <div><%= flight.tickets.seat %> </div>
+    <div>Price:</div>
+    <div><%= flight.tickets.price %> </div>
+  </section>
+  <h2>Add Ticket</h2>
+  <form
+    action="/flights/<%= flight._id%>"
+  >
+    <label for="content-textinput">Seat:</label>
+    <input type="text" name="content" id="content-textinput"></input><br>
+    <label for="content-textinput">Price:</label>
+    <input type="text" name="content" id="content-textinput"></input><br>
+    <button type="submit">Add Ticket</button>
+  </form>
+
+</body>
+</html>
