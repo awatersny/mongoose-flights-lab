@@ -10,7 +10,6 @@
 <body>
   <h1><%= title%></h1>
   <section>
-    <% console.log(flight) %> 
     <div>Airline:</div>
     <div><%= flight.airline %> </div>
     <div>Airport:</div>
@@ -20,20 +19,28 @@
     <div>Time of Depature:</div>
     <div><%= flight.departs %> </div>
     <div>Seat:</div>
-    <div><%= flight.tickets.seat %> </div>
+    <div>
+      <% flight.tickets.forEach(ticket=>{ %>
+        <%= ticket.seat %> 
+      <% });  %> 
+    </div>
     <div>Price:</div>
-    <div><%= flight.tickets.price %> </div>
+    <div>
+      <% flight.tickets.forEach(ticket=>{ %>
+        <%= ticket.price %>
+      <% });  %> 
+    </div>
   </section>
   <h2>Add Ticket</h2>
   <form
-    action="/flights/<%= flight._id%>"
+    action="/flights/<%= flight._id%>/tickets"
+    method="POST"
   >
-    <label for="content-textinput">Seat:</label>
-    <input type="text" name="content" id="content-textinput"></input><br>
-    <label for="content-textinput">Price:</label>
-    <input type="text" name="content" id="content-textinput"></input><br>
+    <label for="seat">Seat:</label>
+    <input type="text" name="seat" id="seat"></input><br>
+    <label for="price">Price:</label>
+    <input type="text" name="price" id="price"></input><br>
     <button type="submit">Add Ticket</button>
   </form>
-
 </body>
 </html>

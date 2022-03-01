@@ -24,13 +24,21 @@ function create(req, res) {
   req.body.departs = req.body.departs.replace('T', ' ');
 
   const flight = new Flight(req.body);
-  console.log(flight);
 
   flight.save(error => {
     if(error){
       return res.redirect('/flights/new');
     }
     res.redirect('/flights');
+  });
+}
+
+function createTicket(req, res){
+  Flight.findById(req.params.id, (error, flight)=>{
+    flight.tickets.push(req.body);
+    flight.save(error=>{
+      res.redirect(`/flights/${flight._id}`);
+    });
   });
 }
 
@@ -48,5 +56,6 @@ export {
   index,
   newFlight as new,
   create,
+  createTicket,
   show
 }
