@@ -59,10 +59,15 @@ function show(req, res) {
   });
 }
 
+function addToMeal(req, res){
+  console.log(1);
+}
+
 export {
   index,
   newFlight as new,
   create,
   createTicket,
-  show
+  show,
+  addToMeal
 }
