@@ -16,11 +16,41 @@ th, td {
   min-width: 150px;
 }
 
-nav {
-  margin: 0;
-  height: 3rem;
+body > nav {
+  background-color: #b8c0c2;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-around;
-  background-color: #ddd;
+  padding: 0 20px 0 30px;
+}
+
+nav > i {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+nav > a {
+  margin: 10px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #424748;
+}
+
+nav > a:visited {
+  color: #424748;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: #424748;
+}
+
+nav > a.active {
+  color: white;
+}
+
+#active {
+  color: white;
 }
