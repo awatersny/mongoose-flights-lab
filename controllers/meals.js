@@ -10,6 +10,11 @@ function newMeal(req, res){
   });
 }
 
+function create(req, res){
+  console.log(1);
+}
+
 export {
-  newMeal as new
+  newMeal as new,
+  create
 }
