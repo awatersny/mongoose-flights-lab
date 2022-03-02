@@ -18,20 +18,8 @@
     <div><%= flight.flightNo %> </div>
     <div>Time of Depature:</div>
     <div><%= flight.departs %> </div>
-    <div>Seats:</div>
-    <div>
-      <% flight.tickets.forEach(ticket=>{ %>
-        <%= ticket.seat %> 
-      <% });  %> 
-    </div>
-    <div>Prices:</div>
-    <div>
-      <% flight.tickets.forEach(ticket=>{ %>
-        <%= ticket.price %>
-      <% });  %> 
-    </div>
   </section>
-  <h2>Add Ticket</h2>
+  <h2>Tickets</h2>
   <form
     action="/flights/<%= flight._id%>/tickets"
     method="POST"
@@ -42,5 +30,29 @@
     <input type="text" name="price" id="price"></input><br>
     <button type="submit">Add Ticket</button>
   </form>
+  <% if (flight.tickets.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Seats</th>
+          <th>Prices</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% flight.tickets.forEach(ticket=>{ %>
+        <tr>
+          <td>
+              <%= ticket.seat %> 
+          </td>
+          <td>
+              $<%= ticket.price %> 
+          </td>
+        </tr>
+        <% });  %> 
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Reviews Yet</h3>
+  <% } %> 
 </body>
 </html>
