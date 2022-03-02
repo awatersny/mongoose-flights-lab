@@ -18,7 +18,17 @@
     <div><%= flight.flightNo %> </div>
     <div>Time of Depature:</div>
     <div><%= flight.departs %> </div>
+    <div>Meals: </div>
   </section>
+  <form 
+    id="add-per-to-meals"
+    action="/flights/<%= flight._id %>/meals"
+    method="post"
+  >
+  <select>
+  </select>
+  <button type="submit">Add to Meals</button>
+</form>
   <h2>Tickets</h2>
   <form
     action="/flights/<%= flight._id%>/tickets"
