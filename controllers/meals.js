@@ -1,8 +1,12 @@
 import { Meal } from "../models/meals.js"
 
 function newMeal(req, res){
-  res.render("meals/new", {
-    title: "Add Meal"
+  Meal.find({}, (error, meals)=>{
+    console.log(meals);
+    res.render("meals/new", {
+      title: "Add Meal",
+      meals
+    });
   });
 }
 

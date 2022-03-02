@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> </title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <h1><%= title %></h1>
+  <p>
+    Please first ensure that the meal is not in the dropdown 
+    <select>
+      <% meals.forEach(meal => { %>
+        <option><%= meal.name %></option>
+      <% }) %>
+    </select>
+  </p>
+  <form id="add-meal-form" action="/meals" method="post">
+    <label for="name-input">Name:</label>
+    <input type="text" name="name" id="name-input">
+    <button type="submit">Add Meal</button>
+  </form>
+</body>
+</html>
