@@ -51,13 +51,14 @@ function createTicket(req, res){
 }
 
 function show(req, res) {
-  Flight.findById(req.params.id, (error, flight)=>{
-    res.render("flights/show", {
-      error: error,
-      flight: flight,
-      title: "Flight Details"
-    });
-  });
+  Flight.findById(req.params.id)
+    .populate('meal')
+    .exec((error, flight)=>{
+      res.render("flights/show", {
+        title: "Flight Details",
+        flight
+      });
+    })
 }
 
 function addToMeal(req, res){
