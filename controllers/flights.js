@@ -1,4 +1,5 @@
 import { Flight } from "../models/flight.js";
+import { Meal } from "../models/meal.js"
 
 function index(req, res) {
   Flight.find({}, (error, flights)=>{

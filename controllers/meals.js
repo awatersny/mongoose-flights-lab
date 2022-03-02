@@ -1,4 +1,4 @@
-import { Meal } from "../models/meals.js"
+import { Meal } from "../models/meal.js"
 
 function newMeal(req, res){
   Meal.find({}, (error, meals)=>{
