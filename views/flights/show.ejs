@@ -26,6 +26,9 @@
     method="post"
   >
   <select>
+    <% meals.forEach(meal => { %>
+      <option value="<%= meal._id %>"> <%= meal.name %> </option>
+    <% }) %>
   </select>
   <button type="submit">Add to Meals</button>
 </form>
