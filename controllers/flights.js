@@ -55,6 +55,7 @@ function show(req, res) {
     .populate('meals')
     .exec((error, flight)=>{
       Meal.find({_id: {$nin: flight.meals}}, (error, meals)=>{
+        console.log(meals)
         res.render("flights/show", {
           title: "Flight Details",
           flight: flight,
