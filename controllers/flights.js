@@ -65,7 +65,12 @@ function show(req, res) {
 }
 
 function addToMeal(req, res){
-  console.log(1);
+  Flight.findById(req.params.id, (error, flight)=>{
+    flight.meals.push(req.body.mealId);
+    flight.save(error=>{
+      res.redirect(`/flights/${flight._id}`);
+    });
+  })
 }
 
 export {
