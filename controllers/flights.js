@@ -42,7 +42,9 @@ function create(req, res) {
 }
 
 function deleteFlight(req, res) {
-  console.log(1)
+  Flight.findByIdAndDelete(req.params.id, (error, flight)=>{
+    res.redirect('/flights')
+  });
 }
 
 function createTicket(req, res){
