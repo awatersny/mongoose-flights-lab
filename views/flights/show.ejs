@@ -19,6 +19,11 @@
     <div>Time of Depature:</div>
     <div><%= flight.departs %> </div>
     <div>Meals: </div>
+    <ul>
+      <% flight.meals.forEach(meal => { %>
+        <li><%= meal.name %></li>
+      <% }) %>
+    </ul>
   </section>
   <form 
     id="add-per-to-meals"

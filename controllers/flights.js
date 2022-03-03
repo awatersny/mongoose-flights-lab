@@ -52,7 +52,7 @@ function createTicket(req, res){
 
 function show(req, res) {
   Flight.findById(req.params.id)
-    .populate('meal')
+    .populate('meals')
     .exec((error, flight)=>{
       Meal.find({}, (error, meals)=>{
         res.render("flights/show", {
