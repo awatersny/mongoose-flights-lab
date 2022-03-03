@@ -54,9 +54,12 @@ function show(req, res) {
   Flight.findById(req.params.id)
     .populate('meal')
     .exec((error, flight)=>{
-      res.render("flights/show", {
-        title: "Flight Details",
-        flight
+      Meal.find({}, (error, meals)=>{
+        res.render("flights/show", {
+          title: "Flight Details",
+          flight: flight,
+          meals: meals
+        });
       });
     })
 }
