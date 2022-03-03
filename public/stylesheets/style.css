@@ -54,3 +54,8 @@ nav > a.active {
 #active {
   color: white;
 }
+
+#flight-options > a{
+  display: block;
+  text-decoration: none;
+}
