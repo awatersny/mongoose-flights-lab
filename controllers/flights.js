@@ -41,6 +41,10 @@ function create(req, res) {
   });
 }
 
+function deleteFlight(req, res) {
+  console.log(1)
+}
+
 function createTicket(req, res){
   Flight.findById(req.params.id, (error, flight)=>{
     flight.tickets.push(req.body);
@@ -78,6 +82,7 @@ export {
   index,
   newFlight as new,
   create,
+  deleteFlight as delete,
   createTicket,
   show,
   addToMeal
